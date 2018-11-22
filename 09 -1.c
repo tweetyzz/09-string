@@ -5,21 +5,21 @@
 
 int main(int argc, char *argv[]) {
 	
-	char src[100] = "Programming course";
-	//char dst[100];
-	int i=0;
+	FILE *fp;
+	char input[100];
+	int i;
 	
+	fp = fopen("sample.txt", "w");
 	
-	while ( src[i] != '\0')
+	for(i=0;i<3;i++)
 	{
-		//dst[i] = src[i];
-		i++;
+		printf("input a word : ");
+		scanf("%s", input);
+		fprintf(fp, "%s\n", input);
 	}
-	//dst[i]='\0';
 	
 	
-	printf("%s (%i)\n",src,i);
-	printf("%i",strlen(src));
-	
+    fclose(fp);
+    
 	return 0;
 }
